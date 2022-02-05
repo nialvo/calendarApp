@@ -61,13 +61,13 @@ for (let i=6; i<22; i++){
     row.append(todo);
     //create and append button
     var but = $('<button>');
-    but.addClass('saveBtn col-1');
+    but.addClass('saveBtn col-1 save');
     but.attr('type','button');
     but.attr('name',tID);
     row.append(but);
     //create and append button icon
     var icon = $('<i>');
-    icon.addClass('fas fa-save saveBtn');
+    icon.addClass('fas fa-save save');
     icon.attr('name',tID);
     but.append(icon);
 }
@@ -86,7 +86,7 @@ setTimeout(moveAlong,delay);//set to repeat color adjustment at the next hour
 
 
 //save to localStorage
-cont.on('click', '.saveBtn', function (e) {
+cont.on('click', '.save', function (e) {
     let slotID=e.target.getAttribute('name');//get row # (id of text input and name of button on each row are the same)
     let slotText=$('#'+slotID).val();//get text input
     let storedIndex=Number(slotID)-7;//get array index corresponding to time slot
